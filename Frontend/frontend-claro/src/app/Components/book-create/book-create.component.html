@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="card m-4 p-1 col-md-6">
+    <div class="card-header" style="background-color: #ef473a">
+      <h4 class="text-center">New Book</h4>
+    </div>
+    <div class="card-body">
+      <!-- <form [formGroup]="Form" (ngSubmit)="saveNew()"> -->
+      <fieldset>
+        <div class="form-group row"></div>
+        <div class="form-group">
+          <label for="name">Title:</label>
+          <input
+            class="form-control"
+            
+            formControlName="title"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="name">Description:</label>
+          <input
+            class="form-control"
+            formControlName="description"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="name">PageCount:</label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="pageCount"
+          />
+        </div>
+        <div class="form-group">
+          <label for="name">Excerpt:</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="excerpt"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="name">Publish Date:</label>
+          <input
+            type="date"
+            class="form-control"
+            formControlName="publishDate"
+          />
+        </div>
+
+        <!-- <button [disabled]="Form.invalid" type="submit" class="btn btn-outline-success btn-block">
+                    Enviar
+                  </button>     -->
+      </fieldset>
+      <!-- </form> -->
+    </div>
+  </div>
+</div>
