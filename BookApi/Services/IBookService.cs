@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using BookApi.Models;
 
 namespace BookApi.Services
 {
     public interface IBookService
     {
 
-        IEnumerable<Book> GetBooks();
-        Book GetBook(int Id);
-        Book AddBook(Book newBook);
-        Book ModifyBook(Book editBook);
-        void DeleteBook(int Id);
+        Task<ServerResponse> GetBooks();
+        Task<ServerResponse> GetBook(int Id);
+        Task<ServerResponse> AddBook(Book newBook);
+        Task<ServerResponse> ModifyBook(Book editBook);
+        Task<ServerResponse> DeleteBook(int Id);
     }
 }
