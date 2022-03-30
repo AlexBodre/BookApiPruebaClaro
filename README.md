@@ -17,4 +17,6 @@ En el list, podemos ver todos los libros, podemos seleccionar uno para acceder a
 En el create tenemos el Books/Add donde podemos agregar un nuevo libro
 En el details tenemos el Books/id donde podemos ver en detalle un libro y tambien modificarlo (Books/id)
 
+*Nota: para ver el objeto modificado pueden abrir la consola del navegador luego de enviar los datos en el form.
+
 
