@@ -11,7 +11,7 @@ namespace BookApi.Services
         Task<ServerResponse> GetBooks();
         Task<ServerResponse> GetBook(int Id);
         Task<ServerResponse> AddBook(Book newBook);
-        Task<ServerResponse> ModifyBook(Book editBook);
+        Task<ServerResponse> ModifyBook(int Id, Book editBook);
         Task<ServerResponse> DeleteBook(int Id);
     }
 }

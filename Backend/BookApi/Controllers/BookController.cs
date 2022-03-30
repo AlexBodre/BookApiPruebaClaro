@@ -25,49 +25,34 @@ namespace BookApi.Controllers
         public async Task<IActionResult> Get()
         {
             var response = await _bookService.GetBooks();
-            if (response == null)
-                return StatusCode(500, "Error al obtener libros");
-
-            return Ok(response);
+            return StatusCode(response.StatusCode, response);
         }
         [HttpGet, Route("Books/{Id}")]
         public async Task<IActionResult> Get(int Id)
         {
             var response = await _bookService.GetBook(Id);
-            if (response == null)
-                return StatusCode(500, "Error al obtener libro");
-
-            return Ok(response);
+            return StatusCode(response.StatusCode, response);
         }
 
         [HttpPost, Route("Books")]
         public async Task<IActionResult> Post(Book newBook)
         {
             var response = await _bookService.AddBook(newBook);
-            if (response == null)
-                return StatusCode(500, "Error al agregar libro");
-
-            return Ok(response);
+            return StatusCode(response.StatusCode, response);
         }
 
         [HttpPut, Route("Books/{Id}")]
-        public async Task<IActionResult> Put(Book editBook)
+        public async Task<IActionResult> Put(int Id, [FromBody] Book editBook)
         {
-            var response = await _bookService.ModifyBook(editBook);
-            if (response == null)
-                return StatusCode(500, "Error al editar libro");
-
-            return Ok(response);
+            var response = await _bookService.ModifyBook(Id, editBook);
+            return StatusCode(response.StatusCode, response);
         }
 
         [HttpDelete, Route("Books/{Id}")]
         public async Task<IActionResult>Delete(int Id)
         {
             var response = await _bookService.DeleteBook(Id);
-            if (response == null)
-                return StatusCode(500, "Error al borrar libro");
-
-            return Ok(response);
+            return StatusCode(response.StatusCode, response);
         }
     }
 }

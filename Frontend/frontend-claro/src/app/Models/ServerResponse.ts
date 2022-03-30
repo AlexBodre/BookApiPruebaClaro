@@ -1,5 +1,5 @@
  export class ServerResponse{
-    StatusCode!: number;
-    Data: any;
-    Message!: string;
+    statusCode!: number;
+    data: any;
+    message!: string;
 }

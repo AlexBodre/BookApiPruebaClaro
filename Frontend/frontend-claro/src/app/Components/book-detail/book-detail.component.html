@@ -1,0 +1,76 @@
+<div class="row">
+    <div class="card m-4 p-1 col-md-6">
+      <div class="card-header" style="background-color: #ef473a">
+        <h4 class="text-center">New Book</h4>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="formulario" (ngSubmit)="(editBook())">
+        <fieldset>
+            <div class="form-group row"></div>
+          <div class="form-group">
+            <label for="name">id:</label>
+            <input
+              class="form-control"
+              
+              formControlName="id"
+            />
+          </div>
+          <div class="form-group row"></div>
+          <div class="form-group">
+            <label for="name">Title:</label>
+            <input
+              class="form-control"
+              
+              formControlName="title"
+            />
+          </div>
+  
+          <div class="form-group">
+            <label for="name">Description:</label>
+            <input
+              class="form-control"
+              formControlName="description"
+            />
+          </div>
+  
+          <div class="form-group">
+            <label for="name">PageCount:</label>
+            <input
+              type="number"
+              class="form-control"
+              formControlName="pageCount"
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">Excerpt:</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="excerpt"
+            />
+          </div>
+  
+          <div class="form-group">
+            <label for="name">Publish Date:</label>
+            <input
+              type="date"
+              class="form-control"
+              formControlName="publishDate"
+            />
+          </div>
+          <div class="row p-3">
+              <div class="col-md-10"></div>
+              <div class="col-md-2 pr-2">
+                  <button [disabled]="formulario.invalid" type="submit" class="btn btn-outline-success btn-block">
+                      Enviar
+                  </button> 
+              </div>
+                
+          </div>
+           
+        </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  

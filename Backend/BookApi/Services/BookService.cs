@@ -4,7 +4,6 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using BookApi.Data;
 using BookApi.Models;
 
 namespace BookApi.Services
@@ -65,9 +64,9 @@ namespace BookApi.Services
             };
         }
 
-        public async Task<ServerResponse> ModifyBook(Book editBook)
+        public async Task<ServerResponse> ModifyBook(int Id, Book editBook)
         {
-            var response = await client.PostAsJsonAsync($"v1/Books", editBook);
+            var response = await client.PutAsJsonAsync($"v1/Books/{Id}", editBook);
             var serviceStatusCode = (int)response.StatusCode;
             var responseData = serviceStatusCode == 200 ? await response.Content.ReadFromJsonAsync<Book>() : null;
 

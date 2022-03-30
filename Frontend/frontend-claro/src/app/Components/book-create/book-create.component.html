@@ -4,7 +4,7 @@
       <h4 class="text-center">New Book</h4>
     </div>
     <div class="card-body">
-      <!-- <form [formGroup]="Form" (ngSubmit)="saveNew()"> -->
+      <form [formGroup]="formulario" (ngSubmit)="newBook()">
       <fieldset>
         <div class="form-group row"></div>
         <div class="form-group">
@@ -49,12 +49,18 @@
             formControlName="publishDate"
           />
         </div>
-
-        <!-- <button [disabled]="Form.invalid" type="submit" class="btn btn-outline-success btn-block">
+        <div class="row p-3">
+            <div class="col-md-10"></div>
+            <div class="col-md-2 pr-2">
+                <button [disabled]="formulario.invalid" type="submit" class="btn btn-outline-success btn-block">
                     Enviar
-                  </button>     -->
+                </button> 
+            </div>
+              
+        </div>
+         
       </fieldset>
-      <!-- </form> -->
+      </form>
     </div>
   </div>
 </div>

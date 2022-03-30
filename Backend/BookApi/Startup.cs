@@ -41,6 +41,7 @@ namespace BookApi
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
             app.UseEndpoints(endpoints =>
             {
